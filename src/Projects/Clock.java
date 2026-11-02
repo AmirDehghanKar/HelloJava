@@ -1,16 +1,16 @@
+//FA
+//زمان فعلی سیستم را یک بار می‌خواند و به شکل ساعت:دقیقه:ثانیه چاپ می‌کند، مثلاً  3:7:9.
+//EN
+//It reads the current system time once and prints it as hour:minute:second, e.g. Now Time 3:7:9.
+
 package Projects;
 
-import java.util.Calendar;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class Clock {
     public static void main(String[] args) {
-        Calendar T = Calendar.getInstance();
-        int Hour = T.get(Calendar.HOUR);
-        int Sec = T.get(Calendar.SECOND);
-        int Min = T.get(Calendar.MINUTE);
-
-        System.out.println("Now Time  " + Hour + ":" + Min + ":" + Sec);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        System.out.println("Now Time  " + LocalTime.now().format(formatter));
     }
-
 }
-/* Zaman Alan */
